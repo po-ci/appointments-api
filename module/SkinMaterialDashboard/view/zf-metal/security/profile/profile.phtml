@@ -1,0 +1,105 @@
+<?php
+$this->layoutHelper()->setPageTitle("Perfil");
+$this->flashCurrent();
+?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="fa fa-cog fa-2x"> </i>
+                </div>
+                <h4 class="card-title"></h4>
+                <div class="clearfix"></div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div>
+                            <div class="text-center">
+                                <?php echo $this->form()->openTag($formImg) ?>
+                                <div class="form-group">
+
+                                    <a class="btn btn-primary btn-round" title="Seleccione una imagen">
+                                        <?php
+                                        $formImg->get('img')->setAttribute('id', 'btnpicture');
+                                        echo $this->formElement($formImg->get('img')); ?>
+
+                                        Cambio de Imagen
+                                    </a>
+                                </div>
+
+                                <?php echo $this->form()->closeTag($formImg); ?>
+
+                                <div class="form-group">
+                                    <a href="<?= $this->url('zf-metal.user/profile/password-update'); ?>"
+                                       class="btn btn-danger btn-round">
+                                        Cambio de contraseña
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">perm_contact_calendar</i>
+                </div>
+
+                <div class="card-profile">
+                    <div class="card-avatar">
+
+                        <?php if ($user && $user->getImg()): ?>
+                            <img class="img"
+                                 src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $user->getImg(); ?>">
+                        <?php else : ?>
+                            <img class="img" src="/img/user.jpg">
+                        <?php endif; ?>
+
+                    </div>
+
+                </div>
+                <h4 class="card-title"></h4>
+                <div class="clearfix"></div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>Nombre:</td>
+                                    <td><?= $user->getName(); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td><?= $user->getEmail(); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Roles:</td>
+                                    <td>
+                                        <?php foreach ($user->getRoles() as $rol) : ?>
+                                            <span class="label label-default tags"><?= $rol->getName(); ?></span>
+                                        <?php endforeach; ?>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('#btnpicture').change(function () {
+      $("#image").submit();
+    });
+  });
+</script>

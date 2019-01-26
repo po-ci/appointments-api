@@ -1,0 +1,64 @@
+<?php $this->layout()->setVariable('titlePage', 'Gestión de usuarios');
+?>
+<div class="clearfix"></div>
+<div class="card">
+    <div class="card-header card-header-icon" data-background-color="rose">
+        <i class="material-icons">assignment</i>
+    </div>
+    <div class="card-content">
+        <h4 class="card-title">Editando Usuario</h4>
+        <div class="clearfix"></div>
+        <?php
+        $groups = [
+            [
+                'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
+                'id' => 'User',
+                'title' => "",
+                'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
+                'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                'fields' => ['name', 'username','phone']
+            ],
+            [
+                'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
+                'id' => 'enableUser',
+                'title' => null,
+                'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
+                'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                'fields' => ['active', 'roles']
+            ],
+        ];
+
+
+        $this->form->remove('groups');
+
+        $this->form->get('submit')->setAttribute('value', 'Guardar')
+            ->setAttribute('class', 'pull-right btn btn-primary')
+            ->setAttribute('style', 'margin-left: 2px');
+
+        $this->form->add(array(
+            'name' => 'cancel',
+            'type' => 'Zend\Form\Element\Button',
+            'attributes' => array(
+                'value' => "Cancelar",
+                'class' => 'pull-right btn btn-default',
+                'onclick' => 'window.location.href="' . $this->url('zf-metal.admin/users', array(), array('query' => $this->routeParams), true) . '"',
+            ),
+            'options' => array(
+                'label' => 'Cancelar',
+            )
+        ));
+
+        $this->form->get('name')
+            ->setAttribute('placeholder', 'Nombre')
+            ->setLabel('Nombre');
+        $this->form->get('username')
+            ->setAttribute('placeholder', 'Usuario')
+            ->setLabel('Usuario');
+
+        echo $this->renderForm($this->form, \ZfMetal\Commons\Consts::STYLE_VERTICAL, \ZfMetal\Commons\Consts::COLUMNS_TWO, $groups);
+        ?>
+
+    </div>
+</div>
+
+
