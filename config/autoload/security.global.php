@@ -4,10 +4,11 @@ namespace ZfMetal\Security;
 
 return [
     'zf-metal-security.options' => [
+        'http_host' => 'http://localhost:8080/#/',
         'public_register' => true,
         'role_default' => 'usuario',
         'email_confirmation_require' => true,
-        'mail_from' => "info.zfmetal@gmail.com",
+        'mail_from' => "ci.sys.virtual@gmail.com",
         'user_state_default' => true,
         'password_recovery' => true,
         'bcrypt_cost' => 12,
