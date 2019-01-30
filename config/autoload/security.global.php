@@ -4,7 +4,7 @@ namespace ZfMetal\Security;
 
 return [
     'zf-metal-security.options' => [
-        'http_host' => 'http://localhost:8080/#/',
+        'http_host' => 'http://sonriu.int/',
         'public_register' => true,
         'role_default' => 'usuario',
         'email_confirmation_require' => true,
