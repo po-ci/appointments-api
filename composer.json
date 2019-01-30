@@ -32,7 +32,7 @@
         "zf-metal/datagrid": "^1.0.1",
         "zf-metal/generator": "^1.0.4",
         "zf-metal/calendar": "dev-master",
-        "zf-metal/security-jwt": "^1.0.1",
+        "zf-metal/security-jwt": "^1.0.2",
         "zf-metal/security-rest": "dev-master"
     },
     "autoload": {
