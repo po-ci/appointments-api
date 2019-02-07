@@ -31,7 +31,7 @@
         "zf-metal/commons": "^1.1.5",
         "zf-metal/datagrid": "^1.0.1",
         "zf-metal/generator": "^1.0.4",
-        "zf-metal/calendar": "dev-master",
+        "zf-metal/calendar": "dev-Shifts",
         "zf-metal/security-jwt": "^1.0.2",
         "zf-metal/security-rest": "dev-master"
     },
