@@ -29,7 +29,7 @@ return [
     'ZfMetal\Mail',
     'ZfMetal\Commons',
     'ZfMetal\Datagrid',
-    'ZfMetal\Generator',
+   // 'ZfMetal\Generator',
     'ZfMetal\Restful',
     'ZfMetal\Security',
     'ZfMetal\SecurityJwt',
