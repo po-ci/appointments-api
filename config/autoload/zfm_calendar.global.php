@@ -3,7 +3,8 @@
 
 return[
     'ZfMetalCalendar.options' => [
-        'pre_event_enable' => true,
+        'appointment_config_enable' => true,
+        'appointment_email_notify' => true
     ]
 
 ];
