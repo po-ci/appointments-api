@@ -28,7 +28,7 @@
         "zf-metal/log": "^1.0.0",
         "zf-metal/mail": "^1.1.2",
         "zf-metal/security": "^1.1.2",
-        "zf-metal/commons": "^1.4.2",
+        "zf-metal/commons": "^1.4.3",
         "zf-metal/datagrid": "^1.0.1",
         "zf-metal/generator": "^1.0.4",
         "zf-metal/calendar": "dev-Shifts",
