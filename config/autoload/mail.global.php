@@ -2,17 +2,17 @@
 
 return[
     'zf-metal-mail.options' => [
-        'default_from' => 'sonriu.turnos@gmail.com',
+        'default_from' => 'xxxxx@xxxxx.com',
         'transport' => 'Zend\Mail\Transport\Smtp',
         'transport_options' => [
             'name' => 'Gmail',
-            'host' => 'smtp.gmail.com',
+            'host' => 'xxxxx', //smtp.gmail.com
             'port' => 465,
             // Notice port change for TLS is 587
             'connection_class' => 'plain',
             'connection_config' => [
-                'username' => 'sonriu.turnos@gmail.com',
-                'password' => 'xxxxx',
+                'username' => 'xxxxx@xxxxx.com', //Email para autenticar
+                'password' => 'xxxxx', //Password del email
                 'ssl' => 'ssl',
             ],
         ]
